@@ -1,5 +1,5 @@
 # EOSdplyr
-A Eos smart contract deployer from frontend
+An Eos smart contract deployer from frontend
 #### Repository
 
 https://github.com/yashwanth2804/EOSdplyr
@@ -36,7 +36,7 @@ Clone the repo
 `npm start`<br><br>
 Change `.env` file configurations <br>
  `Walletkey`, your wallet imported private key. <br>
- `path`, absolute path for the contract folder.<br>
+ `path`, absolute path for the contract folder. (should ends with forwardslash `/` )<br>
  `Developmentkey` , this is the key which used to create accounts.<br>
  <br>
  > make sure you don't  expose keys in deployment environment  
