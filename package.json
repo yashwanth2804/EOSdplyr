@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/yashwanth2804/EOSdplyr#readme",
   "dependencies": {
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "shelljs": "^0.8.2"
   }
