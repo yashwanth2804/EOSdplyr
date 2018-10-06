@@ -42,6 +42,8 @@ Change `.env` file configurations <br>
  > make sure you don't  expose keys in deployment environment  
  
 now open the browser `http://localhost:3001/`
+<br>
+> Run `docker start eosio` if you have't started docker service
 
 ### Features
 
