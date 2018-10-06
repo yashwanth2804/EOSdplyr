@@ -21,6 +21,53 @@ app.get('/', (req, res) => {
 
 })
 
+app.post('/compile', function(req, res) {
+    
+    var type = "compile";
+    var contractName = req.body.accountname;
+     
+   var yourscript = exec('sh f.sh '+password +" "+type+" "+path + " "+contractName,
+   (error, stdout, stderr) => {
+
+       var objOut = {
+           "stdout":`${stdout}`,
+           "stderr":`${stderr}`,
+           "error":`${error}`
+       }
+      
+       
+       res.send(objOut);
+   });
+
+
+});
+
+app.post('/push', function(req, res) {
+   var type = "push";
+   var contractName = req.body.accountname;
+   var action = req.body.action;
+   var data = req.body.Pushdata;
+    
+   var authorizeAccount = req.body.authorizeAccount;
+    //cleos push action addressbook upsert '["a", "alicew", "liddell", "123 drinwwk me way", "wonderland", "amsterdam"]' -p a@active
+  var yourscript = exec('sh f.sh '+password +" "+type+" "+contractName+" "+ action +" "+data+" "+authorizeAccount ,
+  (error, stdout, stderr) => {
+
+   console.log( `${stdout}:${stderr}:${error}` );
+       var objOut = {
+           "stdout":`${stdout}`,
+           "stderr":`${stderr}`,
+           "error":`${error}`
+       }
+      
+   res.send( objOut );
+  });
+
+
+
+});
+
+
 app.post('/createA', function(req, res) {
     
     var type = "create";

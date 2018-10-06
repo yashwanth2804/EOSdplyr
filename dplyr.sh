@@ -7,6 +7,23 @@ alias cleos='docker exec -i eosio /opt/eosio/bin/cleos --url http://127.0.0.1:77
 
 if [ ! -z default ]; then cleos wallet unlock --password "$1"  || true; fi
 
+
+if [ "$2" = "push" ]; then
+# pass type contractname actionname data accountname 
+echo "push action exec $3 $4  $5  -p $6@active"
+cleos push action $3 $4  $5  -p $6@active
+#	cleos push action addressbook upsert '["a", "alicew", "liddell", "123 drinwwk me way", "wonderland", "amsterdam22w"]' -p a@active
+
+fi
+
+if [ "$2" = "compile" ];then
+	 
+	eosio-cpp -o $3$4/$4.wasm $3$4/$4.cpp --abigen
+	cleos set contract $4 $3$4/
+	
+fi
+
+
 if [ "$2" = "create" ];then
 	 
 	if [ "$6" = 1 ];then
