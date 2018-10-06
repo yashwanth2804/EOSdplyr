@@ -8,6 +8,12 @@ alias cleos='docker exec -i eosio /opt/eosio/bin/cleos --url http://127.0.0.1:77
 if [ ! -z default ]; then cleos wallet unlock --password "$1"  || true; fi
 
 
+if [ "$2" = "table" ];then
+	 	cleos get table $3 $4 $5 
+fi
+
+
+
 if [ "$2" = "push" ]; then
 # pass type contractname actionname data accountname 
 echo "push action exec $3 $4  $5  -p $6@active"

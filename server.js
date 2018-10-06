@@ -21,12 +21,37 @@ app.get('/', (req, res) => {
 
 })
 
+
+app.post('/table', function(req, res) {
+  
+    var type = "table";
+    var contract = req.body.contractT;
+    var scope = req.body.scopeT;
+    var tablename = req.body.tablenameT;
+
+     
+   var yourscript = exec('sh dplyr.sh '+password +" "+type+" "+contract + " "+scope+" "+tablename,
+   (error, stdout, stderr) => {
+
+       var objOut = {
+           "stdout":`${stdout}`,
+           "stderr":`${stderr}`,
+           "error":`${error}`
+       }
+      
+       
+       res.send(objOut);
+   });
+
+
+});
+
 app.post('/compile', function(req, res) {
     
     var type = "compile";
     var contractName = req.body.accountname;
      
-   var yourscript = exec('sh f.sh '+password +" "+type+" "+path + " "+contractName,
+   var yourscript = exec('sh dplyr.sh '+password +" "+type+" "+path + " "+contractName,
    (error, stdout, stderr) => {
 
        var objOut = {
@@ -50,7 +75,7 @@ app.post('/push', function(req, res) {
     
    var authorizeAccount = req.body.authorizeAccount;
     //cleos push action addressbook upsert '["a", "alicew", "liddell", "123 drinwwk me way", "wonderland", "amsterdam"]' -p a@active
-  var yourscript = exec('sh f.sh '+password +" "+type+" "+contractName+" "+ action +" "+data+" "+authorizeAccount ,
+  var yourscript = exec('sh dplyr.sh '+password +" "+type+" "+contractName+" "+ action +" "+data+" "+authorizeAccount ,
   (error, stdout, stderr) => {
 
    console.log( `${stdout}:${stderr}:${error}` );

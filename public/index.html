@@ -108,18 +108,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- output console for the output -->
-                            <div class="dropdown-divider"></div>
-                            <div class="progress" style="display: none">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0"
-                                    aria-valuemax="100" style="width: 75%"></div>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <div id="flows" style="overflow-y: auto;height: 250px;">
-
-
-                            </div>
+                           
                         </div>
+                         <!-- output console for the output -->
+                         <div class="dropdown-divider"></div>
+                         <div class="progress" style="display: none">
+                             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                                 aria-valuemax="100" style="width: 75%"></div>
+                         </div>
+                         <div class="dropdown-divider"></div>
+                         <div id="flows" style="overflow-y: auto;height: 250px;">
+
+
+                         </div>
                     </div>
                     <!---table space-->
                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
@@ -254,6 +255,7 @@
 
       $("#Deploy").click(function () {
         $(".progress").show();
+        console.log("show");
         var CtrName = $('#DeployName').val();
 
         $.ajax({
