@@ -1,0 +1,23 @@
+{
+  "name": "eosdplyr",
+  "version": "1.0.0",
+  "description": "A Eos snmart contract deployer from frontend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yashwanth2804/EOSdplyr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yashwanth2804/EOSdplyr/issues"
+  },
+  "homepage": "https://github.com/yashwanth2804/EOSdplyr#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "shelljs": "^0.8.2"
+  }
+}
