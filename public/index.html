@@ -52,7 +52,7 @@
 
                                                     <span class="input-group-text">name</span>
                                                 </div>
-                                                <input id="AccountName" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                                                <input id="AccountName" maxlength="12" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
                                             </div>
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="isContract">
@@ -162,6 +162,157 @@
 
         <script> 
         </script>
+        <script>
+    $(document).ready(function () {
+      console.log("loaded");
+    
+
+
+
+      $("#getTable").click(function () {
+
+        var scopeT = $("#scopeT").val();
+        var tablenameT = $("#tablenameT").val();
+
+        var contractT = $("#contractT").val();
+
+        $.ajax({
+          url: window.location.href + "table",
+          // dataType: "jsonp",
+          data: { contractT: contractT, scopeT: scopeT, tablenameT: tablenameT },
+          type: 'POST',
+
+          success: function (data) {
+
+
+            var obj = JSON.parse(data.stdout.trim());
+            var tablerows = obj.rows;
+            console.log(tablerows); 
+            var html = '<table class="table table-striped">';
+            html += '<tr>';
+            var flag = 0;
+            $.each(tablerows[0], function (index, value) {
+              html += '<th>' + index + '</th>';
+            });
+            html += '</tr>';
+            $.each(tablerows, function (index, value) {
+              html += '<tr>';
+              $.each(value, function (index2, value2) {
+                html += '<td>' + value2 + '</td>';
+              });
+              html += '<tr>';
+            });
+            html += '</table>';
+            $('#table').html('');
+            $('#table').append(html);
+
+
+
+
+          },
+          error: function (data) {
+            $(".progress").hide();
+            console.log(data);
+
+          },
+        });
+
+      });
+
+
+
+      $("#Push").click(function () {
+        var accountname = $("#Push_ctrName").val();
+        var action = $("#Push_actName").val();
+        var Pushdata = $("#Push_data").val();
+        console.log(Pushdata);
+        var authorizeAccount = $("#Push_auth").val();
+
+        $.ajax({
+          url: window.location.href + "push",
+          // dataType: "jsonp",
+          data: { accountname: accountname, action: action, Pushdata: Pushdata, authorizeAccount: authorizeAccount },
+          type: 'POST',
+
+          success: function (data) {
+
+
+            $(".progress").hide();
+            var y = '<span class="d-block p-2 bg-dark text-white"><font style="font-weight: bold;" color="green">"' + data.stdout + '"</font> "\n' + data.stderr + '"\n "' + data.error + '" </span>';
+            $("#flows").prepend(y);
+          },
+          error: function (data) {
+            $(".progress").hide();
+            console.log(data);
+
+          },
+        });
+
+      });
+
+
+
+      $("#Deploy").click(function () {
+        $(".progress").show();
+        var CtrName = $('#DeployName').val();
+
+        $.ajax({
+          url: window.location.href + "compile",
+          // dataType: "jsonp",
+          data: { accountname: CtrName },
+          type: 'POST',
+
+          success: function (data) {
+            $(".progress").hide();
+            var y = '<span class="d-block p-2 bg-dark text-white"><font style="font-weight: bold;" color="green">"' + data.stdout + '"</font> "\n' + data.stderr + '"\n "' + data.error + '" </span>';
+            $("#flows").prepend(y);
+          },
+          error: function (data) {
+            $(".progress").hide();
+            console.log(data);
+
+          },
+        });
+
+
+      });
+
+
+
+
+
+
+      $("#CrateAccount").click(function () {
+        var accountname = $("#AccountName").val();
+        var isContract = $("#isContract").prop('checked');
+        console.log(accountname + " " + isContract + " " + window.location.href);
+        var chkURL = (isContract == true) ? 'createA' : 'create';
+        var chk = (isContract == true) ? 1 : 0;
+
+        $.ajax({
+          url: window.location.href + chkURL,
+          // dataType: "jsonp",
+          data: { accountname: accountname, chk: chk },
+          type: 'POST',
+
+          success: function (data) {
+
+            var y = '<span class="d-block p-2 bg-dark text-white"><font style="font-weight: bold;" color="green">"' + data.stdout + '"</font> "\n' + data.stderr + '"\n "' + data.error + '" </span>';
+            $("#flows").prepend(y);
+          },
+          error: function (data) {
+            console.log(data);
+
+          },
+        });
+
+
+      });
+
+    });
+
+
+  </script>
 
 </body>
 

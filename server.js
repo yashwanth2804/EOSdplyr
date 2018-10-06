@@ -24,12 +24,19 @@ app.get('/', (req, res) => {
 app.post('/createA', function(req, res) {
     
     var type = "create";
+    var contractFileName = req.body.accountname;
+
     var contractName = req.body.accountname;
+        if(contractName.includes(".")){
+            console.log("##### has . ####");
+            contractName = contractName.split(".")[1];
+        }
     var ownerkey =process.env.Developmentkey;
     var isContract = req.body.chk;
+    
      
     //dplyr.sh is a bash file where cleos exists
-   var deployscript = exec('sh dplyr.sh '+password +" "+type+" "+path + " "+contractName+" "+ownerkey +" "+isContract,
+   var deployscript = exec('sh dplyr.sh '+password +" "+type+" "+path + " "+contractFileName+" "+ownerkey +" "+isContract+" "+contractName,
    (error, stdout, stderr) => {
    
     var objOut = {

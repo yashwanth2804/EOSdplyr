@@ -19,7 +19,7 @@ if [ "$2" = "create" ];then
 						 #include <eosiolib/print.hpp> \n
 				using namespace eosio;	\n
 
-				class '$4' : public eosio::contract { \n
+				class '$7' : public eosio::contract { \n
 				  public: \n
 				      using contract::contract; \n
 
@@ -29,7 +29,7 @@ if [ "$2" = "create" ];then
 				      }\n
 				};\n
 				\n
-				EOSIO_ABI( '$4', (hi) ) \n'
+				EOSIO_ABI( '$7', (hi) ) \n'
 		echo $contractTemplate >> $4.cpp
 		 		
 		
