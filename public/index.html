@@ -2,166 +2,166 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
 
-  <title>EOS DPLYR</title>
+    <title>EOS DPLYR</title>
 </head>
 
 <body>
-  <ul class="nav justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">EOS DLPYR</a>
-    </li>
-  </ul>
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">EOS DLPYR</a>
+        </li>
+    </ul>
 
-  <div class="container">
-    <!-- Content here -->
     <div class="container">
+        <!-- Content here -->
+        <div class="container">
 
 
-      <nav>
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home"
-            aria-selected="true">Deployment</a>
-          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile"
-            aria-selected="false">Table</a>
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home"
+                        aria-selected="true">Deployment</a>
+                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile"
+                        aria-selected="false">Table</a>
 
-        </div>
-      </nav>
-      <div class="tab-content" id="nav-tabContent">
-          <!--Deployment -->
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <!--Deployment -->
+                 
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
                         <div class="row">
-                          <div class="col-sm-3">
-                              <!-- Create account / Contract account -->
-                            <div class="card" style="width: 18rem;">
-                              <div class="card-body">
-                                <h5 class="card-title">Create Account/Contract Account</h5>
-                                <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                <p class="card-text">
-                                  <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-              
-                                      <span class="input-group-text">name</span>
+                            <div class="col-sm-3">
+                                <!-- Create account / Contract account -->
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Create Account/Contract Account</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                        <p class="card-text">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+
+                                                    <span class="input-group-text">name</span>
+                                                </div>
+                                                <input id="AccountName" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="isContract">
+                                                <label class="custom-control-label" for="isContract">Is this a Contract Account</label>
+                                            </div>
+                                        </p>
+
+                                        <button id="CrateAccount" class="btn btn-outline-primary">Create Account</button>
                                     </div>
-                                    <input id="AccountName" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
-                                  </div>
-                                  <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="isContract">
-                                    <label class="custom-control-label" for="isContract">Is this a Contract Account</label>
-                                  </div>
-                                </p>
-              
-                                <button id="CrateAccount" class="btn btn-outline-primary">Create Account</button>
-                              </div>
+                                </div>
                             </div>
-                          </div>
-                          <div class="col-sm-3">
-                              <!-- comple and set contract -->
-                            <div class="card" style="width: 18rem;">
-                              <div class="card-body">
-                                <h5 class="card-title">Compile and set Contract</h5>
-                                <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                <p class="card-text">
-                                  <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-              
-                                      <span class="input-group-text">name</span>
+                            <div class="col-sm-3">
+                                <!-- comple and set contract -->
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Compile and set Contract</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                        <p class="card-text">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+
+                                                    <span class="input-group-text">name</span>
+                                                </div>
+                                                <input id="DeployName" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                                            </div>
+                                        </p>
+                                        <button id="Deploy" class="btn btn-outline-primary">Deploy</button>
+
                                     </div>
-                                    <input id="DeployName" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
-                                  </div>
-                                </p>
-                                <button id="Deploy" class="btn btn-outline-primary">Deploy</button>
-              
-                              </div>
+                                </div>
                             </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="card" style="width: 33rem;">
-                              <div class="card-body">
-                                <h5 class="card-title">Compile and set Contract</h5>
-                                <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                <p class="card-text">
-                                  <div class="input-group">
-                                    <input type="text" id="Push_ctrName" placeholder="Contract name" aria-label="First name" class="form-control">
-                                    <input type="text" id="Push_actName" placeholder="action" aria-label="Last name" class="form-control">
-                                  </div>
-                                  <div class="input-group">
-              
-                                    <input type="text" id="Push_data" placeholder="data" aria-label="Last name" class="form-control">
-                                  </div>
-                                  <div class="input-group">
-              
-                                    <input type="text" id="Push_auth" placeholder="authorizer" aria-label="Last name" class="form-control">
-                                  </div>
-                                </p>
-                                <button id="Push" class="btn btn-outline-primary">Push</button>
-              
-                              </div>
+                            <div class="col-sm-6">
+                                <div class="card" style="width: 33rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Compile and set Contract</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                        <p class="card-text">
+                                            <div class="input-group">
+                                                <input type="text" id="Push_ctrName" placeholder="Contract name" aria-label="First name" class="form-control">
+                                                <input type="text" id="Push_actName" placeholder="action" aria-label="Last name" class="form-control">
+                                            </div>
+                                            <div class="input-group">
+
+                                                <input type="text" id="Push_data" placeholder="data" aria-label="Last name" class="form-control">
+                                            </div>
+                                            <div class="input-group">
+
+                                                <input type="text" id="Push_auth" placeholder="authorizer" aria-label="Last name" class="form-control">
+                                            </div>
+                                        </p>
+                                        <button id="Push" class="btn btn-outline-primary">Push</button>
+
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                          <!-- output console for the output -->
-                          <div class="dropdown-divider"></div>
-                          <div class="progress" style="display: none">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0"
-                              aria-valuemax="100" style="width: 75%"></div>
-                          </div>
-                          <div class="dropdown-divider"></div>
-                          <div id="flows" style="overflow-y: auto;height: 250px;">
-                
-                
-                          </div>
+                            <!-- output console for the output -->
+                            <div class="dropdown-divider"></div>
+                            <div class="progress" style="display: none">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                                    aria-valuemax="100" style="width: 75%"></div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <div id="flows" style="overflow-y: auto;height: 250px;">
+
+
+                            </div>
                         </div>
+                    </div>
+                    <!---table space-->
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div class="input-group">
+
+                            <input id="contractT" type="text" placeholder="Contract" aria-label="First name" class="form-control">
+                            <input id="scopeT" type="text" placeholder="Scope" aria-label="Last name" class="form-control">
+                            <input id="tablenameT" type="text" placeholder="TableName" aria-label="Last name" class="form-control">
+                        </div>
+                        <button id="getTable" type="button" class="btn btn-dark">Get Table</button>
+
+                        <div id="table"></div>
+
+                        <div id="output">
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
         </div>
-        <!---table space-->
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                <div class="input-group">
 
-                        <input id="contractT" type="text" placeholder="Contract" aria-label="First name" class="form-control">
-                        <input id="scopeT" type="text" placeholder="Scope" aria-label="Last name" class="form-control">
-                        <input id="tablenameT" type="text" placeholder="TableName" aria-label="Last name" class="form-control">
-                      </div>
-                      <button id="getTable" type="button" class="btn btn-dark">Get Table</button>
-            
-                      <div id="table"></div>
-            
-                      <div id="output">
-            
-                      </div>
-        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-      </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
 
-
-
-
-
-    </div>
-
-
-
-
-  </div>
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-
-  <script> 
-  </script>
+        <script> 
+        </script>
 
 </body>
 

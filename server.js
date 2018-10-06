@@ -21,7 +21,53 @@ app.get('/', (req, res) => {
 
 })
 
+app.post('/createA', function(req, res) {
+    
+    var type = "create";
+    var contractName = req.body.accountname;
+    var ownerkey =process.env.Developmentkey;
+    var isContract = req.body.chk;
+     
+    //dplyr.sh is a bash file where cleos exists
+   var deployscript = exec('sh dplyr.sh '+password +" "+type+" "+path + " "+contractName+" "+ownerkey +" "+isContract,
+   (error, stdout, stderr) => {
+   
+    var objOut = {
+        "stdout":`${stdout}`,
+        "stderr":`${stderr}`,
+        "error":`${error}`
+    }
+       res.send( objOut);
 
+   });
+
+
+   
+
+});
+app.post('/create', function(req, res) {
+    var type = "create";
+
+    var contractName = req.body.accountname;
+    var isContract = req.body.chk;
+    var ownerkey =process.env.Developmentkey;
+     //dplyr.sh is a bash file where cleos exists
+
+   var deployscript = exec('sh dplyr.sh '+password +" "+type+" "+path + " "+contractName +" "+ownerkey +" "+isContract,
+   (error, stdout, stderr) => {
+
+    var objOut = {
+        "stdout":`${stdout}`,
+        "stderr":`${stderr}`,
+        "error":`${error}`
+    }
+    res.send( objOut );
+   });
+
+
+   
+
+});
 app.listen(port, () => { 
 console.log(`Example app listening on port ${port}!`)})
 
